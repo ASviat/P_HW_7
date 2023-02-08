@@ -10,4 +10,18 @@
 # Проверить работу метода.
 # Например: 20м*5000м*25кг*0.05м = 125000 кг = 125 т
 
+class Road:
+    asphalt_to_cover_1cm = 25
 
+    def __init__(self):
+        self._length = 20
+        self._width = 5000
+        self.thickness = 5
+
+    def mass_of_asphalt(self):
+        return self._length*self._width*Road.asphalt_to_cover_1cm*self.thickness
+
+
+r = Road()
+
+print(f'Количество необходимых тонн: {int(r.mass_of_asphalt()/1000)}')
